@@ -77,3 +77,28 @@ int main()
     printf("Took %f seconds with %d threads\n", total_time, Number_Of_Threads);
     printf("Count after excuting %ld Threads is= %ld\n", Number_Of_Threads, count);
 }
+
+
+/*
+    What will be written here was supported by the data collected and will
+    be included in the submission under Data.xlsx 
+
+    _for sizes 100, 10,000, and 1 million, in addition to not getting the
+    right value because of the race condition, we add an overhead to the 
+    running time.
+
+    _for 10 million, we get a 40% drop in the running time as soon as we use 
+    2 threads, after that, the trend is constant, with an average running
+    time of 0.0345 seconds, WE ARE STILL GETTING THE WRONG ANSWER.
+
+    _for 100 million, we obtain a drop in the running time until we reach
+    32 threads, but after using 64, we lose the time just to get back to 
+    the same time we had when we used 4,8, and 16 threads.
+
+    _for 1 billion, the running time only increases to reach a constant of 
+    almost 3.5 seconds.
+
+    _Conclusion: Threading using this specific technique not only gives us 
+    the wrong answer, but adds more to the running time than what is desired.
+
+*/

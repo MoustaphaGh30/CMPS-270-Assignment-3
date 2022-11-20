@@ -111,4 +111,7 @@ int main()
     _ for 10 million, 100 million and 1 billion, we successfully lower the 
     running time until we reach 32 threads, where increasing the number of 
     threads whon't really make a difference.
+
+    _conclusion: this is the best method so far, locking has proven to take 
+    too much time, so private sums may be the answer to our issue.
 */
