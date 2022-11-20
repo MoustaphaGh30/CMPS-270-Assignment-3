@@ -94,3 +94,21 @@ int main()
     free(Private_Thread_Sum);
     return 0;
 }
+
+/*
+    What will be written here was supported by the data collected and will
+    be included in the submission under Data.xlsx 
+
+    _for sizes 100 and 10,000, the running time only went up, which indicates
+    that threading for such small sizes is not worth the overhead.
+
+    _for size 1,000,000, we notice a drop in the running time up to 8 threads,
+    but when we increase further, we get the same pattern as the one we got 
+    for the previous sizes, we include that adding more threads doesn't 
+    guarantee a better running time, we have to carefully choose the number of
+    threads to ensure that we get an improved performance.
+
+    _ for 10 million, 100 million and 1 billion, we successfully lower the 
+    running time until we reach 32 threads, where increasing the number of 
+    threads whon't really make a difference.
+*/
