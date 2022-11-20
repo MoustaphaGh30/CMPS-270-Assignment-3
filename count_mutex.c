@@ -90,3 +90,28 @@ int main()
     free(array);
     return 0;
 }
+
+/*
+    What will be written here was supported by the data collected and will
+    be included in the submission under Data.xlsx 
+
+    _For sizes 100 and 10,000: Threading using locks did nothing but add to 
+    the running time, and this was the case for 1,2,4,8,16,32 and 64 threads
+    we may conclude that threading is simply not worth it for data this 
+    small.
+
+    _For sizes 1,10, and 100 million length arrays, we notice an interesting pattern, the 
+    trend that we saw in the previous sizes continued when using up to 16 
+    threads, after that, we notice a drop by approximately 65% in the 
+    running time, but as we increase the number of threads more, the trend 
+    becomes almost constant, and is still at a higher running time than 
+    using no threads.
+
+    _For 1 billion, as we use more threads, it only gets worse, So we can inply 
+    that threading and using locks is inefficient for such large sizes and with 
+    so many threads, note that I didn't include the results for 32 and 64 threads
+    because my computer was getting too slow. 
+
+    Conclusion: Threading with locking added nothing but and overhead to the 
+    performance, unlike private sums that was done in count_private.
+*/
